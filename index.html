@@ -2,26 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Be My Valentine 💖</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Floating hearts background -->
+  <!-- Floating hearts -->
   <div class="hearts" id="hearts"></div>
 
   <div class="container">
     <div class="card">
+
       <div class="badge">💌 Something special for you</div>
 
       <div class="big-heart"></div>
 
+      <!-- PHOTO SECTION -->
+      <div class="photo-wrapper">
+        <img src="photo.png" alt="Us 💖" class="valentine-photo" />
+      </div>
+
       <h1>Will you be my Valentine? 💘</h1>
+
       <p class="subtitle">
-        I promise smiles, warmth, and at least one cute memory together 🌸
+        I made this because some feelings deserve more than just words 🌸
       </p>
 
       <div class="buttons">
@@ -30,19 +36,23 @@
       </div>
 
       <p class="hint" id="hint">Try clicking “No” 😄</p>
+
     </div>
   </div>
 
-  <!-- Modal -->
+  <!-- MODAL -->
   <div class="modal-backdrop" id="modal">
     <div class="modal">
-      <h2>Yay!!! 💖</h2>
-      <p>You just made my day 🥰</p>
+      <h2>7 CRORE!! 💖</h2>
+      <p>
+        I was really hoping you’d say yes.  
+        Now you owe me a smile and I owe you a hug and dessert of course! 🍰
+        P.S: Unblock me please 🥹
+      </p>
       <button id="closeBtn" class="btn yes">Close</button>
     </div>
   </div>
 
-  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
