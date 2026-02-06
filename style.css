@@ -23,6 +23,7 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
+  z-index: 0;
 }
 
 .heart {
@@ -59,6 +60,8 @@ body {
   display: grid;
   place-items: center;
   padding: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .card {
@@ -70,6 +73,7 @@ body {
   max-width: 420px;
   width: 100%;
   box-shadow: 0 18px 50px rgba(0,0,0,0.15);
+  position: relative;
 }
 
 .badge {
@@ -173,6 +177,7 @@ body {
   background: rgba(0,0,0,0.4);
   display: none;
   place-items: center;
+  z-index: 5;
 }
 
 .modal {
@@ -181,4 +186,51 @@ body {
   border-radius: 22px;
   text-align: center;
   max-width: 320px;
+}
+
+/* ========================= */
+/* CONFETTI (NEW)            */
+/* ========================= */
+
+.confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 77, 125, 0.9);
+  transform: rotate(45deg);
+  border-radius: 2px;
+  animation: confettiFall linear forwards;
+}
+
+.confetti-piece::before,
+.confetti-piece::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.confetti-piece::before { left: -5px; top: 0; }
+.confetti-piece::after  { left: 0; top: -5px; }
+
+@keyframes confettiFall {
+  from {
+    transform: translateY(-15vh) rotate(45deg) scale(var(--cs));
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  to {
+    transform: translateY(110vh) rotate(45deg) scale(var(--cs));
+    opacity: 0;
+  }
 }
